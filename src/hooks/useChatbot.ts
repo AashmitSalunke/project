@@ -83,42 +83,46 @@ const generateAIResponse = async (input: string): Promise<string> => {
     return generateFallbackResponse(input);
   }
 };
-
 const generateFallbackResponse = (input: string): string => {
   const lowerInput = input.toLowerCase();
-  
-  if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
-    return `Hello! 👋 I'm ${PORTFOLIO_DATA.name}'s AI assistant, powered by Gemini Flash 2.0. I'm here to tell you all about his skills, projects, and background as an Information Science Engineering student. What would you like to know?`;
+
+  if (lowerInput.includes("hello") || lowerInput.includes("hi") || lowerInput.includes("hey")) {
+    return `Hey 👋 what's up?`;
   }
-  
-  if (lowerInput.includes('who') || lowerInput.includes('about')) {
-    return `I'm ${PORTFOLIO_DATA.name}, an ${PORTFOLIO_DATA.title} at ${PORTFOLIO_DATA.college}. I'm passionate about programming and web development, with strong skills in languages like Python, Java, C++, and web technologies like Node.js and Express.js. I also have good analytical and communication skills!`;
+
+  if (lowerInput.includes("who") || lowerInput.includes("about")) {
+    return `I’m Aashmit, studying Info Science Engg at RNSIT. Mostly into coding, projects, and just building stuff that interests me.`;
   }
-  
-  if (lowerInput.includes('github')) {
-    return `You can find ${PORTFOLIO_DATA.name}'s GitHub profile at: ${PORTFOLIO_DATA.github}\n\nHe has repositories showcasing his web development projects using Node.js and Express.js, as well as his practice with data structures and algorithms in Java and C++. Check it out to see his coding journey!`;
+
+  if (lowerInput.includes("github")) {
+    return `Yeah, I’ve got my stuff on GitHub → ${PORTFOLIO_DATA.github}. You’ll see my web projects and some DSA practice there.`;
   }
-  
-  if (lowerInput.includes('skills') || lowerInput.includes('technologies')) {
-    return `${PORTFOLIO_DATA.name} has a diverse skill set:\n\n🔹 Programming: ${PORTFOLIO_DATA.skills.programming.join(', ')}\n🔹 Web Development: ${PORTFOLIO_DATA.skills.web.join(', ')}\n🔹 Database: ${PORTFOLIO_DATA.skills.database.join(', ')}\n🔹 Tools: ${PORTFOLIO_DATA.skills.tools.join(', ')}\n🔹 Soft Skills: ${PORTFOLIO_DATA.skills.soft.join(', ')}\n\nHe's always learning and expanding his technical expertise!`;
+
+  if (lowerInput.includes("skills") || lowerInput.includes("technologies")) {
+    return `So tech-wise, I know ${PORTFOLIO_DATA.skills.programming.join(", ")}.  
+I also mess around with web dev using ${PORTFOLIO_DATA.skills.web.join(", ")}.  
+But honestly, I enjoy solving problems and building small projects more than just listing skills 😅.`;
   }
-  
-  if (lowerInput.includes('projects')) {
-    return `Here are some of ${PORTFOLIO_DATA.name}'s notable projects:\n\n${PORTFOLIO_DATA.projects.map(project => 
-      `🚀 ${project.name}\n${project.description}\nTech Stack: ${project.tech.join(', ')}\nGitHub: ${project.github}`
-    ).join('\n\n')}\n\nHe's always working on new projects to improve his skills!`;
+
+  if (lowerInput.includes("projects")) {
+    return `I’ve done a couple:  
+- **${PORTFOLIO_DATA.projects[0].name}** → ${PORTFOLIO_DATA.projects[0].description} (GitHub: ${PORTFOLIO_DATA.projects[0].github})  
+- **${PORTFOLIO_DATA.projects[1].name}** → ${PORTFOLIO_DATA.projects[1].description} (GitHub: ${PORTFOLIO_DATA.projects[1].github})  
+
+Nothing crazy, but I keep experimenting and learning through them.`;
   }
-  
-  if (lowerInput.includes('contact') || lowerInput.includes('email')) {
-    return `You can reach ${PORTFOLIO_DATA.name} at:\n📧 Email: ${PORTFOLIO_DATA.email}\n💼 LinkedIn: ${PORTFOLIO_DATA.linkedin}\n\nHe's always interested in discussing new opportunities, collaborations, or just talking about technology!`;
+
+  if (lowerInput.includes("contact") || lowerInput.includes("email")) {
+    return `You can just mail me at ${PORTFOLIO_DATA.email} or hit me up on LinkedIn → ${PORTFOLIO_DATA.linkedin}.`;
   }
-  
-  if (lowerInput.includes('college') || lowerInput.includes('education')) {
-    return `${PORTFOLIO_DATA.name} is currently pursuing Information Science Engineering at ${PORTFOLIO_DATA.college}. He's building a strong foundation in computer science fundamentals while gaining practical experience through various programming projects and web development work.`;
+
+  if (lowerInput.includes("college") || lowerInput.includes("education")) {
+    return `I’m doing my Info Science Engg at ${PORTFOLIO_DATA.college}. College is fine, but I mostly focus on coding outside classes.`;
   }
-  
-  return `That's a great question! I can tell you about ${PORTFOLIO_DATA.name}'s:\n• Programming skills (Python, Java, C++, JavaScript)\n• Web development experience (Node.js, Express.js)\n• GitHub projects and repositories\n• Educational background at RNS Institute of Technology\n• Contact information\n\nWhat specifically would you like to know more about?`;
+
+  return `Hmm, not sure what you mean 😅. I can tell you about my skills, projects, college, or maybe share my GitHub — what do you wanna know?`;
 };
+
 
 export const useChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
