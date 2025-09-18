@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
               </a>
               
               <a
-                href="mailto:aashmit.salunke@example.com"
+                href="mailto:aashmitsalunke@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-600 text-gray-300 rounded-full hover:border-gray-500 hover:text-white transition-all duration-300 transform hover:scale-105"
               >
                 <Mail className="w-5 h-5" />
