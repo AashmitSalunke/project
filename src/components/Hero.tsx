@@ -1,5 +1,7 @@
 import React from 'react';
 import { Github, Mail, Sparkles } from 'lucide-react';
+import dp1 from '../images/dp1.jpg';
+
 
 export const Hero: React.FC = () => {
   return (
@@ -20,7 +22,7 @@ export const Hero: React.FC = () => {
          {/* Logo/Avatar */}
 <div className="flex justify-center items-center mb-8">
   <img
-    src="dp1.jpg"
+    src={dp1}
     alt="Logo"
     className="w-20 h-20 rounded-full object-cover 
                animate-pulse 
