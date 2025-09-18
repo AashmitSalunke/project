@@ -46,8 +46,7 @@ export const Hero: React.FC = () => {
           </p>
 
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-            Ask my AI assistant anything about my programming skills, web development projects, GitHub, or academic journey at RNS Institute of Technology. 
-            Powered by Gemini Flash 2.0 for intelligent conversations about my portfolio.
+            Ask my AI assistant anything about my programming skills, web development projects, GitHub, or academic journey at RNS Institute of Technology. .
           </p>
 
           {/* CTA Buttons */}
