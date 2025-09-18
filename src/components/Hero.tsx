@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Mail, Code, Sparkles } from 'lucide-react';
+import { Github, Mail, Sparkles } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -17,10 +17,19 @@ export const Hero: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
-          {/* Logo/Avatar */}
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-8 animate-pulse">
-            <Code className="w-10 h-10 text-white" />
-          </div>
+         {/* Logo/Avatar */}
+<div className="flex justify-center items-center mb-8">
+  <img
+    src="dp1.jpg"
+    alt="Logo"
+    className="w-20 h-20 rounded-full object-cover 
+               animate-pulse 
+               transition-transform duration-300 
+               hover:scale-110 hover:rotate-6"
+  />
+</div>
+
+
 
           {/* Main heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
